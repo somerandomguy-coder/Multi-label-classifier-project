@@ -1,8 +1,12 @@
 # Multi-label-classifier-project
 ## Dataset:
+
 Site: https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/
+
 Dataset name: "Amazon Fashion" (5-core) and one part of "Clothing, Shoes and Jewelry" (5-core) dataset
+
 Raw data look like this:
+
 {
 "image": ["https://images-na.ssl-images-amazon.com/images/I/71eG75FTJJL._SY88.jpg"], 
 "overall": 5.0, 
@@ -20,6 +24,7 @@ Raw data look like this:
 "summary": "Comfy, flattering, discreet--highly recommended!", 
 "unixReviewTime": 1514764800
 }
+
 But I only take "reviewText" to label and train model
 ### Labels
 11 labels:
@@ -35,11 +40,18 @@ But I only take "reviewText" to label and train model
 - Too small	
 - Too large
 ## Active learning loop
+
 Step 1: First use the labeled data to train
+
+
 ### Model: Bert + fine-tuning
+
 Step 2: Predict on new dataset, unlabeled data and get confident score
+
 Step 3: If confident score more than 80%, integrate to the dataset. If lower, manually labeled it
+
 Step 4: Re-train model on new dataset.
+
 Step 5: repeat from step 2
 
 ## Compare model result:
